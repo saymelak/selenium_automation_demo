@@ -31,7 +31,7 @@ pip install -r requirements.txt
 Then put the file in the lib folder
 
 #### Running the code
-You can use any of the following command
+You can use any of the following commands
 ```
 nosetests -v
 nosetests -a priority=high -v
