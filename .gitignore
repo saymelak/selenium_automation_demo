@@ -1,0 +1,8 @@
+tests/.coverage
+tests/latest_logs
+tests/archived_logs
+tests/.pytest_cache
+latest_logs
+archived_logs
+.pytest_cache
+.idea
