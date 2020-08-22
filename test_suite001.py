@@ -8,6 +8,7 @@ class SmokeTestSuite002(BaseCase):
     @attr(priority="high")
     @attr(category="regression")
     def test_001_Should_be_able_to_navigate_through_all_pages_using_url(self):
+        """ TCID001: Should be able to navigate through all pages using url"""
         self.Open(Page.HOME)
         self.Verify().PageTitle('Home')
 
@@ -29,6 +30,7 @@ class SmokeTestSuite002(BaseCase):
     @attr(priority="high")
     @attr(category="regression")
     def test_002_Should_be_able_to_navigate_through_all_pages_using_nav_bar(self):
+        """ TCID002: Should be able to navigate through all pages using nav bar"""
         self.Navigate(To.HOME)
         self.Verify().PageTitle('Home')
 
@@ -50,7 +52,10 @@ class SmokeTestSuite002(BaseCase):
     @attr(priority="medium")
     @attr(category="sanity")
     def test_003_Should_be_able_to_add_contact(self):
+        """ TCID003: Should be able to add contact """
+        """ Navigate to the Forms page"""
         self.Navigate(To.FORMS)
+        """ Fill out the Contact Form and click Submit"""
         self.Send(Forms.NAME_FIELD, 'Rob Smith')
         self.Send(Forms.EMAIL_FIELD, 'rob.smith.com')
         self.Send(Forms.PASSWORD_FIELD, 'password123')
@@ -65,7 +70,10 @@ class SmokeTestSuite002(BaseCase):
 
     @attr(priority="low")
     @attr(category="smoke")
+    @attr(demo="demo")
     def test_004_Should_be_able_to_display_charts(self):
+        """ TCID004: Should be able to display Charts """
+
         """ Navigate to the Charts Page """
         self.Navigate(To.CHARTS)
 

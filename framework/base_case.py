@@ -57,7 +57,12 @@ class BaseCase(unittest.TestCase):
         """ Navigates the current browser window to the page using the specified menu item. """
         element = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
         element.click()
-        print('Navigate to - ', xpath)
+        delay = 3  # seconds
+        try:
+            WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.TAG_NAME, 'h1')))
+            print("Page is ready!")
+        except TimeoutError:
+            print("Loading took too much time!")
 
     class Verify:
         def TextDisplayed(self, xpath, txt):
