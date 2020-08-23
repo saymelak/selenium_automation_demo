@@ -3,6 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import unittest
 from selenium.webdriver.common.by import By
+import sys
+from framework.config import Config
 
 
 class BaseCase(unittest.TestCase):
@@ -16,9 +18,11 @@ class BaseCase(unittest.TestCase):
         global wait
         global base_url
 
-        base_url = "http://piassa.ca/test/"
-
-        driver = webdriver.Chrome('lib/chromedriver')
+        base_url = Config.base_url
+        if sys.platform == 'darwin':
+            driver = webdriver.Chrome('lib/chromedriver')
+        if sys.platform == 'win32':
+            driver = webdriver.Chrome('lib/chromedriver.exe')
         driver.get(base_url+'index.html')
         driver.implicitly_wait(10)
         wait = WebDriverWait(driver, 10)
@@ -49,7 +53,6 @@ class BaseCase(unittest.TestCase):
         delay = 3  # seconds
         try:
             WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.TAG_NAME, 'h1')))
-            print("Page is ready!")
         except TimeoutError:
             print("Loading took too much time!")
 
@@ -60,7 +63,6 @@ class BaseCase(unittest.TestCase):
         delay = 3  # seconds
         try:
             WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.TAG_NAME, 'h1')))
-            print("Page is ready!")
         except TimeoutError:
             print("Loading took too much time!")
 

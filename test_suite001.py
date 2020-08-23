@@ -66,7 +66,9 @@ class SmokeTestSuite002(BaseCase):
         self.Send(Forms.COMMENTS_FIELD, 'Comment 1, 2, 3, ...')
         self.Click(Forms.SEND_BUTTON)
 
-        self.Verify().TextDisplayed(Forms.OUTPUT_TITLE, 'You have entered the following:')
+        self.Verify().TextDisplayed(Forms.MODAL_TITLE, 'You have entered the following..')
+
+        self.Click(Forms.MODAL_CLOSE_BUTTON)
 
     @attr(priority="low")
     @attr(category="smoke")

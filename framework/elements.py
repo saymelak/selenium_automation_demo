@@ -17,7 +17,8 @@ class Forms:
     COMMENT_RADIO_BUTTON = '//*[@id="commentitem"]'
     COMMENTS_FIELD = '//*[@id="myComments"]'
     SEND_BUTTON = '//*[@id="sendButton"]'
-    OUTPUT_TITLE = '//*[@id="output"]'
+    MODAL_TITLE = '//*[@id="modalTitle"]'
+    MODAL_CLOSE_BUTTON = '//*[@id="myModal"]/div/span'
 
 
 class Page:
