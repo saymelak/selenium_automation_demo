@@ -93,6 +93,11 @@ class BaseCase(unittest.TestCase):
             assert current_title == title
 
         def Canvas(self, xpath):
+            delay = 3  # seconds
+            try:
+                WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.XPATH, xpath)))
+            except TimeoutError:
+                print("Loading took too much time!")
             w = driver.find_element_by_xpath(xpath).get_attribute("width")
             h = driver.find_element_by_xpath(xpath).get_attribute("height")
 
