@@ -86,7 +86,7 @@ class SmokeTestSuite002(BaseCase):
         self.Click(Charts.SUBMIT_BUTTON)
 
         """ Verify that the Chart is displayed """
-        self.Verify().CanvasSize(Charts.CHART1, 1072, 536)
+        self.Verify().Canvas(Charts.CHART1)
 
         """ Choose Line from the dropdown list """
         self.Select(Charts.CHART_TYPE_FIELD, 'Bar')
@@ -95,7 +95,7 @@ class SmokeTestSuite002(BaseCase):
         self.Click(Charts.SUBMIT_BUTTON)
 
         """ Verify that the Chart is displayed """
-        self.Verify().CanvasSize(Charts.CHART1, 1072, 536)
+        self.Verify().Canvas(Charts.CHART1)
 
         """ Choose Horizontal Bar from the dropdown list """
         self.Select(Charts.CHART_TYPE_FIELD, 'Horizontal Bar')
@@ -104,7 +104,7 @@ class SmokeTestSuite002(BaseCase):
         self.Click(Charts.SUBMIT_BUTTON)
 
         """ Verify that the Chart is displayed """
-        self.Verify().CanvasSize(Charts.CHART1, 1072, 536)
+        self.Verify().Canvas(Charts.CHART1)
 
         """ Choose Doughnut from the dropdown list """
         self.Select(Charts.CHART_TYPE_FIELD2, 'Doughnut')
@@ -113,7 +113,7 @@ class SmokeTestSuite002(BaseCase):
         self.Click(Charts.SUBMIT_BUTTON2)
 
         """ Verify that the Chart is displayed """
-        self.Verify().CanvasSize(Charts.CHART1, 1072, 536)
+        self.Verify().Canvas(Charts.CHART1)
 
         """ Choose Pie from the dropdown list """
         self.Select(Charts.CHART_TYPE_FIELD2, 'Pie')
@@ -122,5 +122,5 @@ class SmokeTestSuite002(BaseCase):
         self.Click(Charts.SUBMIT_BUTTON2)
 
         """ Verify that the Chart is displayed """
-        self.Verify().CanvasSize(Charts.CHART1, 1072, 536)
+        self.Verify().Canvas(Charts.CHART1)
 

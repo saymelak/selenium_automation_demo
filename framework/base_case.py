@@ -92,10 +92,9 @@ class BaseCase(unittest.TestCase):
             current_title = driver.title
             assert current_title == title
 
-        def CanvasSize(self, xpath, width, height):
+        def Canvas(self, xpath):
             w = driver.find_element_by_xpath(xpath).get_attribute("width")
             h = driver.find_element_by_xpath(xpath).get_attribute("height")
-            print(w)
-            print(h)
-            assert str(width) == w
-            assert str(height) == h
+
+            assert int(w) > 0
+            assert int(h) > 0
